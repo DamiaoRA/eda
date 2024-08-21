@@ -9,6 +9,9 @@ public class Main {
 		list.insert("px", 1);
 		list.print();
 		System.out.println(list.size());
+		list.removeBegin();
+		list.removeeEnd();
+		list.print();
 
 		//
 		List<Integer> listInt = new DoublyLinkedList<Integer>();
@@ -18,5 +21,8 @@ public class Main {
 		list.insert(99, 1);
 		listInt.print();
 		System.out.println(listInt.size());
+		list.removeBegin();
+		list.removeeEnd();
+		list.print();
 	}
 }

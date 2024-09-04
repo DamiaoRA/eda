@@ -1,9 +1,7 @@
 package lista;
 
 
-import java.util.Iterator;
 import java.util.Scanner;
-import java.util.Vector;
 
 import lista.exception.ListaCheiaException;
 import lista.exception.ListaIndiceForaLimiteException;
@@ -11,63 +9,30 @@ import lista.exception.ListaVaziaException;
 
 public class Main {
 	
-//	public static void main(String[] args) throws ListaCheiaException, ListaVaziaException {
-//		EDAListaEstatica lista = new EDAListaEstatica(5);
-//		lista.inserirNoFinal(10);
-//		lista.inserirNoFinal(5);
-//		lista.inserirNoFinal(40);
-//		lista.inserirNoFinal(30);
-//		lista.imprimir();
-//		
-//		lista.inserirNoComeco(87);
-//		lista.imprimir();
-//		
-//		lista.removerDoFinal();
-//		lista.imprimir();
-//		
-//		lista.removerDoInicio();
-//		lista.imprimir();
-//		
-//	}
-	
-	public static void main(String[] args) throws ListaCheiaException, ListaVaziaException, ListaIndiceForaLimiteException {
+	public static void main(String[] args) throws ListaCheiaException, ListaVaziaException, ListaIndiceForaLimiteException {		
+		EDAListaIF lista = criarLista();	
+
+		lista.inserirNoFinal(10);
+		lista.inserirNoFinal(5);
+		lista.inserirNoFinal(40);
+		lista.inserirNoFinal(30);
+		lista.inserir(99, 2);
+		lista.imprimir();
+		lista.remover(1);
+		lista.imprimir();
+		System.out.println(lista.buscar(40));
+
+		lista.inserirNoComeco(87);
+		lista.imprimir();
 		
-		EDANo p = new EDANo(5);
-		p.setProximo(new EDANo(70));
-		p.getProximo().setProximo(new EDANo(4));
-		p.getProximo().getProximo().setProximo(new EDANo(31));
-		p.getProximo().getProximo().setDado(12);
-		p.getProximo().getProximo().getProximo().setProximo(new EDANo(42));
+		lista.removerDoFinal();
+		lista.imprimir();
 		
-		EDANo lixo = p;
-		while (lixo != null) {
-			System.out.println(lixo.getDado());
-			lixo = lixo.getProximo();
-		}
-		
-//		EDAListaIF lista = criarLista();	
-//
-//		lista.inserirNoFinal(10);
-//		lista.inserirNoFinal(5);
-//		lista.inserirNoFinal(40);
-//		lista.inserirNoFinal(30);
-//		lista.inserir(99, 2);
-//		lista.imprimir();
-//		lista.remover(1);
-//		lista.imprimir();
-//		System.out.println(lista.buscar(40));
-//
-//		lista.inserirNoComeco(87);
-//		lista.imprimir();
-//		
-//		lista.removerDoFinal();
-//		lista.imprimir();
-//		
-//		lista.removerDoInicio();
-//		lista.imprimir();
-//
-//		lista.inserirNoFinal(2003);
-//		lista.imprimir();
+		lista.removerDoInicio();
+		lista.imprimir();
+
+		lista.inserirNoFinal(2003);
+		lista.imprimir();
 	}
 
 	private static EDAListaIF criarLista() {
@@ -87,3 +52,37 @@ public class Main {
 		}
 	}
 }
+
+
+//EDANo p = new EDANo(5);
+//p.setProximo(new EDANo(70));
+//p.getProximo().setProximo(new EDANo(4));
+//p.getProximo().getProximo().setProximo(new EDANo(31));
+//p.getProximo().getProximo().setDado(12);
+//p.getProximo().getProximo().getProximo().setProximo(new EDANo(42));
+//
+//EDANo lixo = p;
+//while (lixo != null) {
+//	System.out.println(lixo.getDado());
+//	lixo = lixo.getProximo();
+//}
+
+
+//public static void main(String[] args) throws ListaCheiaException, ListaVaziaException {
+//EDAListaEstatica lista = new EDAListaEstatica(5);
+//lista.inserirNoFinal(10);
+//lista.inserirNoFinal(5);
+//lista.inserirNoFinal(40);
+//lista.inserirNoFinal(30);
+//lista.imprimir();
+//
+//lista.inserirNoComeco(87);
+//lista.imprimir();
+//
+//lista.removerDoFinal();
+//lista.imprimir();
+//
+//lista.removerDoInicio();
+//lista.imprimir();
+//
+//}

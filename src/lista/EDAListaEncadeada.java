@@ -1,7 +1,5 @@
 package lista;
 
-import java.math.BigDecimal;
-
 import lista.exception.ListaCheiaException;
 import lista.exception.ListaIndiceForaLimiteException;
 import lista.exception.ListaVaziaException;

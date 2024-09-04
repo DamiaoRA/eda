@@ -13,7 +13,7 @@ public class SentinelNo<T> {
 		return ++size;
 	}
 
-	public int removeSize() {
+	public int decSize() {
 		if(size > 0)
 			--size;
 		return size;

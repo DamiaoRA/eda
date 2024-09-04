@@ -14,8 +14,10 @@ public class EDAFilaDinamica implements EDAFilaIF {
 		if(isVazia()) {
 			inicio = no;
 		} else {
-			//TODO
-			//for
+			EDANo ultimo = inicio;
+			while(ultimo.getProximo() != null)
+				ultimo = ultimo.getProximo();
+			ultimo.setProximo(no);
 		}
 	}
 
@@ -31,8 +33,13 @@ public class EDAFilaDinamica implements EDAFilaIF {
 
 	@Override
 	public int quantidade() {
-		// TODO Auto-generated method stub
-		return 0;
+		int count = 0;
+		EDANo aux = inicio;
+		while (aux  != null) {
+			count++;
+			aux = aux.getProximo();
+		}
+		return count;
 	}
 
 	@Override
@@ -47,6 +54,11 @@ public class EDAFilaDinamica implements EDAFilaIF {
 
 	@Override
 	public void imprimir() {
-		// TODO Auto-generated method stub
+		EDANo aux = inicio;
+		while (aux  != null) {
+			System.out.print(aux.getDado() + " ");
+			aux = aux.getProximo();
+		}
+		System.out.println();
 	}
 }
